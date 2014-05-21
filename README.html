@@ -194,8 +194,8 @@ record them in a markdown file.
 
 <h3>Step 1 Merge train and test data and measuremen values</h3>
 
-<pre><code class="r">####################### loadData(type) - load data and merge ydata and measuerment values for test
-####################### or train - &#39;type&#39;: indicating test or train data
+<pre><code class="r">### loadData(type) - load data and merge ydata and measuerment values for test
+### or train - &#39;type&#39;: indicating test or train data
 
 loadData &lt;- function(type) {
     # load data
@@ -269,15 +269,7 @@ dim(tidy)  # See the row and column number
 <pre><code>## [1] 180  81
 </code></pre>
 
-<pre><code class="r">cname &lt;- colnames(tidy)
-cname &lt;- gsub(cname)
-</code></pre>
-
-<pre><code>## Error: 缺少引數 &quot;x&quot;，也沒有預設值
-</code></pre>
-
-<pre><code class="r">write.csv(cname, &quot;names.csv&quot;)
-summary(tidy)
+<pre><code class="r">summary(tidy)
 </code></pre>
 
 <pre><code>##     subject                   activity  tBodyAcc-mean()-X
@@ -478,9 +470,10 @@ summary(tidy)
 ##  Max.   : 0.4263
 </code></pre>
 
-<h3>Step 6 Output tidy as tidy.txt</h3>
+<h3>Step 6 Output tidy as tidy.txt and tidy.csv</h3>
 
 <pre><code class="r">write.table(tidy, &quot;tidy.txt&quot;)
+write.csv(tidy, &quot;tidy.csv&quot;)
 </code></pre>
 
 </body>

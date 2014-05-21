@@ -8,15 +8,16 @@
     record them in a markdown file.
 
     * 1 data soruce :http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+    
 ### Step 1 Merge train and test data and measuremen values
 
 ```{r cache=TRUE}
-#######################
+###
 ### loadData(type)
 ## - load data and merge ydata and measuerment values 
 ##   for test or train
 ## - 'type': indicating test or train data
-#######################################
+###
 
 loadData<- function (type){
   #load data 
@@ -82,13 +83,11 @@ tidyMelted<-melt(preData,id=c("subject","activity"))
 ```{r cache=TRUE}
 tidy <- cast(tidyMelted, subject+activity~variable, mean)
 dim(tidy) # See the row and column number
-cname<-colnames(tidy)
-cname<-gsub(cname)
-write.csv(cname,"names.csv")
 summary(tidy)
 ```
 
-### Step 6 Output tidy as tidy.txt
-```{r cache=TRUE}
+### Step 6 Output tidy as tidy.txt and tidy.csv
+```{r }
 write.table(tidy,"tidy.txt")
+write.csv(tidy,"tidy.csv")
 ```

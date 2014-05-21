@@ -8,12 +8,13 @@
     record them in a markdown file.
 
     * 1 data soruce :http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+    
 ### Step 1 Merge train and test data and measuremen values
 
 
 ```r
-####################### loadData(type) - load data and merge ydata and measuerment values for test
-####################### or train - 'type': indicating test or train data
+### loadData(type) - load data and merge ydata and measuerment values for test
+### or train - 'type': indicating test or train data
 
 loadData <- function(type) {
     # load data
@@ -94,16 +95,6 @@ dim(tidy)  # See the row and column number
 ```
 
 ```r
-cname <- colnames(tidy)
-cname <- gsub(cname)
-```
-
-```
-## Error: 缺少引數 "x"，也沒有預設值
-```
-
-```r
-write.csv(cname, "names.csv")
 summary(tidy)
 ```
 
@@ -307,9 +298,10 @@ summary(tidy)
 ```
 
 
-### Step 6 Output tidy as tidy.txt
+### Step 6 Output tidy as tidy.txt and tidy.csv
 
 ```r
 write.table(tidy, "tidy.txt")
+write.csv(tidy, "tidy.csv")
 ```
 
