@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Course Project</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h2>Course Project</h2>
+
+<h3>Summary</h3>
+
+<pre><code>In this project , we are asked to make a report , tidy dataset, and codebook presented in github
+The datassource is collected from the accelerometers from the Samsung Galaxy S smartphone.
+We can obtain data from the UCI Machine Learning Repository website(*1)
+To output the required tidy datset , we must do some data cleanning and transformation on data and
+record them in a markdown file.
+
+* 1 data soruce :http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+</code></pre>
+
+<h3>Step 1 Merge train and test data and measuremen values</h3>
+
+<pre><code class="r">####################### loadData(type) - load data and merge ydata and measuerment values for test
+####################### or train - &#39;type&#39;: indicating test or train data
+
+loadData &lt;- function(type) {
+    # load data
+    folder &lt;- &quot;UCI HAR Dataset/&quot;
+    filetype &lt;- &quot;.txt&quot;
+
+    subjects &lt;- read.table(paste(folder, type, &quot;/subject_&quot;, type, filetype, 
+        sep = &quot;&quot;))
+    y &lt;- read.table(paste(folder, type, &quot;/y_&quot;, type, filetype, sep = &quot;&quot;))
+
+    featuresName &lt;- read.table(paste(folder, &quot;features&quot;, filetype, sep = &quot;&quot;))
+    x &lt;- read.table(paste(folder, type, &quot;/X_&quot;, type, filetype, sep = &quot;&quot;))
+
+    # Put header of the feature value with features name
+    names(x) &lt;- featuresName[, 2]
+
+
+    # Put header of the activity value and subject with proper name
+    colnames(subjects) &lt;- &quot;subject&quot;
+    colnames(y) &lt;- &quot;activity&quot;
+
+
+    # Combine the y ,subject and x together
+    df &lt;- cbind(cbind(subjects, y), x)
+    return(df)
+}
+setwd(&quot;/Develop/R/Coursera/Course3/&quot;)
+test &lt;- loadData(&quot;test&quot;)
+train &lt;- loadData(&quot;train&quot;)
+
+fulData &lt;- rbind(train, test)
+</code></pre>
+
+<h3>Step 2 replace activity with descriptive activity name</h3>
+
+<pre><code class="r"># Replace the activity with corrsponding activity name
+activityNames &lt;- read.table(&quot;UCI HAR Dataset/activity_labels.txt&quot;)
+fulData$activity &lt;- sapply(fulData$activity, function(x) activityNames[x, 2])
+</code></pre>
+
+<h3>Step 3 Keep measurements respresented for mean and standard deciation</h3>
+
+<pre><code class="r"># Keep features that represents for mean and standard deviation (std)
+
+featuresNames &lt;- read.table(&quot;UCI HAR Dataset/features.txt&quot;)
+colnames(featuresNames) &lt;- c(&quot;fId&quot;, &quot;featurename&quot;)
+keepFeatures = subset(featuresNames, grepl(&quot;mean|std&quot;, featurename))[, 2]
+
+# Select the features we want
+preData &lt;- subset(fulData, select = c(cbind(&quot;subject&quot;, &quot;activity&quot;), as.character(keepFeatures)))
+</code></pre>
+
+<h3>Step 4 Create a dataframe with identity vaiable &ldquo;subject&rdquo; and &ldquo;activity&rdquo;</h3>
+
+<pre><code class="r">
+# Use reshape library to create a dataframe with identity vaiable &#39;subject&#39;
+# and &#39;activity&#39;
+library(reshape)
+tidyMelted &lt;- melt(preData, id = c(&quot;subject&quot;, &quot;activity&quot;))
+</code></pre>
+
+<h3>Step 5 Create the tidy data with measurements with respect to each subject and activities</h3>
+
+<pre><code>    - This Rows: 180 (30 sujbect x 6 activities) with 81 columns
+</code></pre>
+
+<pre><code class="r">tidy &lt;- cast(tidyMelted, subject + activity ~ variable, mean)
+dim(tidy)  # See the row and column number
+</code></pre>
+
+<pre><code>## [1] 180  81
+</code></pre>
+
+<pre><code class="r">cname &lt;- colnames(tidy)
+cname &lt;- gsub(cname)
+</code></pre>
+
+<pre><code>## Error: 缺少引數 &quot;x&quot;，也沒有預設值
+</code></pre>
+
+<pre><code class="r">write.csv(cname, &quot;names.csv&quot;)
+summary(tidy)
+</code></pre>
+
+<pre><code>##     subject                   activity  tBodyAcc-mean()-X
+##  Min.   : 1.0   LAYING            :30   Min.   :0.222    
+##  1st Qu.: 8.0   SITTING           :30   1st Qu.:0.271    
+##  Median :15.5   STANDING          :30   Median :0.277    
+##  Mean   :15.5   WALKING           :30   Mean   :0.274    
+##  3rd Qu.:23.0   WALKING_DOWNSTAIRS:30   3rd Qu.:0.280    
+##  Max.   :30.0   WALKING_UPSTAIRS  :30   Max.   :0.301    
+##  tBodyAcc-mean()-Y  tBodyAcc-mean()-Z tBodyAcc-std()-X tBodyAcc-std()-Y 
+##  Min.   :-0.04051   Min.   :-0.1525   Min.   :-0.996   Min.   :-0.9902  
+##  1st Qu.:-0.02002   1st Qu.:-0.1121   1st Qu.:-0.980   1st Qu.:-0.9421  
+##  Median :-0.01726   Median :-0.1082   Median :-0.753   Median :-0.5090  
+##  Mean   :-0.01788   Mean   :-0.1092   Mean   :-0.558   Mean   :-0.4605  
+##  3rd Qu.:-0.01494   3rd Qu.:-0.1044   3rd Qu.:-0.198   3rd Qu.:-0.0308  
+##  Max.   :-0.00131   Max.   :-0.0754   Max.   : 0.627   Max.   : 0.6169  
+##  tBodyAcc-std()-Z tGravityAcc-mean()-X tGravityAcc-mean()-Y
+##  Min.   :-0.988   Min.   :-0.680       Min.   :-0.4799     
+##  1st Qu.:-0.950   1st Qu.: 0.838       1st Qu.:-0.2332     
+##  Median :-0.652   Median : 0.921       Median :-0.1278     
+##  Mean   :-0.576   Mean   : 0.698       Mean   :-0.0162     
+##  3rd Qu.:-0.231   3rd Qu.: 0.943       3rd Qu.: 0.0877     
+##  Max.   : 0.609   Max.   : 0.975       Max.   : 0.9566     
+##  tGravityAcc-mean()-Z tGravityAcc-std()-X tGravityAcc-std()-Y
+##  Min.   :-0.4951      Min.   :-0.997      Min.   :-0.994     
+##  1st Qu.:-0.1173      1st Qu.:-0.983      1st Qu.:-0.971     
+##  Median : 0.0238      Median :-0.970      Median :-0.959     
+##  Mean   : 0.0741      Mean   :-0.964      Mean   :-0.952     
+##  3rd Qu.: 0.1495      3rd Qu.:-0.951      3rd Qu.:-0.937     
+##  Max.   : 0.9579      Max.   :-0.830      Max.   :-0.644     
+##  tGravityAcc-std()-Z tBodyAccJerk-mean()-X tBodyAccJerk-mean()-Y
+##  Min.   :-0.991      Min.   :0.0427        Min.   :-0.03869     
+##  1st Qu.:-0.961      1st Qu.:0.0740        1st Qu.: 0.00047     
+##  Median :-0.945      Median :0.0764        Median : 0.00947     
+##  Mean   :-0.936      Mean   :0.0795        Mean   : 0.00757     
+##  3rd Qu.:-0.918      3rd Qu.:0.0833        3rd Qu.: 0.01340     
+##  Max.   :-0.610      Max.   :0.1302        Max.   : 0.05682     
+##  tBodyAccJerk-mean()-Z tBodyAccJerk-std()-X tBodyAccJerk-std()-Y
+##  Min.   :-0.06746      Min.   :-0.995       Min.   :-0.990      
+##  1st Qu.:-0.01060      1st Qu.:-0.983       1st Qu.:-0.972      
+##  Median :-0.00386      Median :-0.810       Median :-0.776      
+##  Mean   :-0.00495      Mean   :-0.595       Mean   :-0.565      
+##  3rd Qu.: 0.00196      3rd Qu.:-0.223       3rd Qu.:-0.148      
+##  Max.   : 0.03805      Max.   : 0.544       Max.   : 0.355      
+##  tBodyAccJerk-std()-Z tBodyGyro-mean()-X tBodyGyro-mean()-Y
+##  Min.   :-0.993       Min.   :-0.2058    Min.   :-0.2042   
+##  1st Qu.:-0.983       1st Qu.:-0.0471    1st Qu.:-0.0896   
+##  Median :-0.884       Median :-0.0287    Median :-0.0732   
+##  Mean   :-0.736       Mean   :-0.0324    Mean   :-0.0743   
+##  3rd Qu.:-0.512       3rd Qu.:-0.0168    3rd Qu.:-0.0611   
+##  Max.   : 0.031       Max.   : 0.1927    Max.   : 0.0275   
+##  tBodyGyro-mean()-Z tBodyGyro-std()-X tBodyGyro-std()-Y tBodyGyro-std()-Z
+##  Min.   :-0.0725    Min.   :-0.994    Min.   :-0.994    Min.   :-0.986   
+##  1st Qu.: 0.0747    1st Qu.:-0.974    1st Qu.:-0.963    1st Qu.:-0.961   
+##  Median : 0.0851    Median :-0.789    Median :-0.802    Median :-0.801   
+##  Mean   : 0.0874    Mean   :-0.692    Mean   :-0.653    Mean   :-0.616   
+##  3rd Qu.: 0.1018    3rd Qu.:-0.441    3rd Qu.:-0.420    3rd Qu.:-0.311   
+##  Max.   : 0.1791    Max.   : 0.268    Max.   : 0.476    Max.   : 0.565   
+##  tBodyGyroJerk-mean()-X tBodyGyroJerk-mean()-Y tBodyGyroJerk-mean()-Z
+##  Min.   :-0.1572        Min.   :-0.0768        Min.   :-0.09250      
+##  1st Qu.:-0.1032        1st Qu.:-0.0455        1st Qu.:-0.06172      
+##  Median :-0.0987        Median :-0.0411        Median :-0.05343      
+##  Mean   :-0.0961        Mean   :-0.0427        Mean   :-0.05480      
+##  3rd Qu.:-0.0911        3rd Qu.:-0.0384        3rd Qu.:-0.04898      
+##  Max.   :-0.0221        Max.   :-0.0132        Max.   :-0.00694      
+##  tBodyGyroJerk-std()-X tBodyGyroJerk-std()-Y tBodyGyroJerk-std()-Z
+##  Min.   :-0.997        Min.   :-0.997        Min.   :-0.995       
+##  1st Qu.:-0.980        1st Qu.:-0.983        1st Qu.:-0.985       
+##  Median :-0.840        Median :-0.894        Median :-0.861       
+##  Mean   :-0.704        Mean   :-0.764        Mean   :-0.710       
+##  3rd Qu.:-0.463        3rd Qu.:-0.586        3rd Qu.:-0.474       
+##  Max.   : 0.179        Max.   : 0.296        Max.   : 0.193       
+##  tBodyAccMag-mean() tBodyAccMag-std() tGravityAccMag-mean()
+##  Min.   :-0.9865    Min.   :-0.987    Min.   :-0.9865      
+##  1st Qu.:-0.9573    1st Qu.:-0.943    1st Qu.:-0.9573      
+##  Median :-0.4829    Median :-0.607    Median :-0.4829      
+##  Mean   :-0.4973    Mean   :-0.544    Mean   :-0.4973      
+##  3rd Qu.:-0.0919    3rd Qu.:-0.209    3rd Qu.:-0.0919      
+##  Max.   : 0.6446    Max.   : 0.428    Max.   : 0.6446      
+##  tGravityAccMag-std() tBodyAccJerkMag-mean() tBodyAccJerkMag-std()
+##  Min.   :-0.987       Min.   :-0.993         Min.   :-0.995       
+##  1st Qu.:-0.943       1st Qu.:-0.981         1st Qu.:-0.977       
+##  Median :-0.607       Median :-0.817         Median :-0.801       
+##  Mean   :-0.544       Mean   :-0.608         Mean   :-0.584       
+##  3rd Qu.:-0.209       3rd Qu.:-0.246         3rd Qu.:-0.217       
+##  Max.   : 0.428       Max.   : 0.434         Max.   : 0.451       
+##  tBodyGyroMag-mean() tBodyGyroMag-std() tBodyGyroJerkMag-mean()
+##  Min.   :-0.981      Min.   :-0.981     Min.   :-0.9973        
+##  1st Qu.:-0.946      1st Qu.:-0.948     1st Qu.:-0.9852        
+##  Median :-0.655      Median :-0.742     Median :-0.8648        
+##  Mean   :-0.565      Mean   :-0.630     Mean   :-0.7364        
+##  3rd Qu.:-0.216      3rd Qu.:-0.360     3rd Qu.:-0.5119        
+##  Max.   : 0.418      Max.   : 0.300     Max.   : 0.0876        
+##  tBodyGyroJerkMag-std() fBodyAcc-mean()-X fBodyAcc-mean()-Y
+##  Min.   :-0.998         Min.   :-0.995    Min.   :-0.9890  
+##  1st Qu.:-0.981         1st Qu.:-0.979    1st Qu.:-0.9536  
+##  Median :-0.881         Median :-0.769    Median :-0.5950  
+##  Mean   :-0.755         Mean   :-0.576    Mean   :-0.4887  
+##  3rd Qu.:-0.577         3rd Qu.:-0.217    3rd Qu.:-0.0634  
+##  Max.   : 0.250         Max.   : 0.537    Max.   : 0.5242  
+##  fBodyAcc-mean()-Z fBodyAcc-std()-X fBodyAcc-std()-Y  fBodyAcc-std()-Z
+##  Min.   :-0.990    Min.   :-0.997   Min.   :-0.9907   Min.   :-0.987  
+##  1st Qu.:-0.962    1st Qu.:-0.982   1st Qu.:-0.9404   1st Qu.:-0.946  
+##  Median :-0.724    Median :-0.747   Median :-0.5134   Median :-0.644  
+##  Mean   :-0.630    Mean   :-0.552   Mean   :-0.4815   Mean   :-0.582  
+##  3rd Qu.:-0.318    3rd Qu.:-0.197   3rd Qu.:-0.0791   3rd Qu.:-0.266  
+##  Max.   : 0.281    Max.   : 0.658   Max.   : 0.5602   Max.   : 0.687  
+##  fBodyAcc-meanFreq()-X fBodyAcc-meanFreq()-Y fBodyAcc-meanFreq()-Z
+##  Min.   :-0.636        Min.   :-0.3795       Min.   :-0.5201      
+##  1st Qu.:-0.392        1st Qu.:-0.0813       1st Qu.:-0.0363      
+##  Median :-0.257        Median : 0.0079       Median : 0.0658      
+##  Mean   :-0.232        Mean   : 0.0115       Mean   : 0.0437      
+##  3rd Qu.:-0.061        3rd Qu.: 0.0863       3rd Qu.: 0.1754      
+##  Max.   : 0.159        Max.   : 0.4665       Max.   : 0.4025      
+##  fBodyAccJerk-mean()-X fBodyAccJerk-mean()-Y fBodyAccJerk-mean()-Z
+##  Min.   :-0.995        Min.   :-0.989        Min.   :-0.992       
+##  1st Qu.:-0.983        1st Qu.:-0.973        1st Qu.:-0.980       
+##  Median :-0.813        Median :-0.782        Median :-0.871       
+##  Mean   :-0.614        Mean   :-0.588        Mean   :-0.714       
+##  3rd Qu.:-0.282        3rd Qu.:-0.196        3rd Qu.:-0.470       
+##  Max.   : 0.474        Max.   : 0.277        Max.   : 0.158       
+##  fBodyAccJerk-std()-X fBodyAccJerk-std()-Y fBodyAccJerk-std()-Z
+##  Min.   :-0.995       Min.   :-0.991       Min.   :-0.9931     
+##  1st Qu.:-0.985       1st Qu.:-0.974       1st Qu.:-0.9837     
+##  Median :-0.825       Median :-0.785       Median :-0.8951     
+##  Mean   :-0.612       Mean   :-0.571       Mean   :-0.7565     
+##  3rd Qu.:-0.247       3rd Qu.:-0.169       3rd Qu.:-0.5438     
+##  Max.   : 0.477       Max.   : 0.350       Max.   :-0.0062     
+##  fBodyAccJerk-meanFreq()-X fBodyAccJerk-meanFreq()-Y
+##  Min.   :-0.5760           Min.   :-0.6020          
+##  1st Qu.:-0.2897           1st Qu.:-0.3975          
+##  Median :-0.0609           Median :-0.2321          
+##  Mean   :-0.0691           Mean   :-0.2281          
+##  3rd Qu.: 0.1766           3rd Qu.:-0.0472          
+##  Max.   : 0.3314           Max.   : 0.1957          
+##  fBodyAccJerk-meanFreq()-Z fBodyGyro-mean()-X fBodyGyro-mean()-Y
+##  Min.   :-0.6276           Min.   :-0.993     Min.   :-0.994    
+##  1st Qu.:-0.3087           1st Qu.:-0.970     1st Qu.:-0.970    
+##  Median :-0.0919           Median :-0.730     Median :-0.814    
+##  Mean   :-0.1376           Mean   :-0.637     Mean   :-0.677    
+##  3rd Qu.: 0.0386           3rd Qu.:-0.339     3rd Qu.:-0.446    
+##  Max.   : 0.2301           Max.   : 0.475     Max.   : 0.329    
+##  fBodyGyro-mean()-Z fBodyGyro-std()-X fBodyGyro-std()-Y fBodyGyro-std()-Z
+##  Min.   :-0.986     Min.   :-0.995    Min.   :-0.994    Min.   :-0.987   
+##  1st Qu.:-0.962     1st Qu.:-0.975    1st Qu.:-0.960    1st Qu.:-0.964   
+##  Median :-0.791     Median :-0.809    Median :-0.796    Median :-0.822   
+##  Mean   :-0.604     Mean   :-0.711    Mean   :-0.645    Mean   :-0.658   
+##  3rd Qu.:-0.264     3rd Qu.:-0.481    3rd Qu.:-0.415    3rd Qu.:-0.392   
+##  Max.   : 0.492     Max.   : 0.197    Max.   : 0.646    Max.   : 0.522   
+##  fBodyGyro-meanFreq()-X fBodyGyro-meanFreq()-Y fBodyGyro-meanFreq()-Z
+##  Min.   :-0.3958        Min.   :-0.6668        Min.   :-0.5075       
+##  1st Qu.:-0.2134        1st Qu.:-0.2943        1st Qu.:-0.1548       
+##  Median :-0.1155        Median :-0.1579        Median :-0.0508       
+##  Mean   :-0.1046        Mean   :-0.1674        Mean   :-0.0572       
+##  3rd Qu.: 0.0027        3rd Qu.:-0.0427        3rd Qu.: 0.0415       
+##  Max.   : 0.2492        Max.   : 0.2731        Max.   : 0.3771       
+##  fBodyAccMag-mean() fBodyAccMag-std() fBodyAccMag-meanFreq()
+##  Min.   :-0.987     Min.   :-0.988    Min.   :-0.3123       
+##  1st Qu.:-0.956     1st Qu.:-0.945    1st Qu.:-0.0147       
+##  Median :-0.670     Median :-0.651    Median : 0.0813       
+##  Mean   :-0.536     Mean   :-0.621    Mean   : 0.0761       
+##  3rd Qu.:-0.162     3rd Qu.:-0.365    3rd Qu.: 0.1744       
+##  Max.   : 0.587     Max.   : 0.179    Max.   : 0.4358       
+##  fBodyBodyAccJerkMag-mean() fBodyBodyAccJerkMag-std()
+##  Min.   :-0.994             Min.   :-0.994           
+##  1st Qu.:-0.977             1st Qu.:-0.975           
+##  Median :-0.794             Median :-0.813           
+##  Mean   :-0.576             Mean   :-0.599           
+##  3rd Qu.:-0.187             3rd Qu.:-0.267           
+##  Max.   : 0.538             Max.   : 0.316           
+##  fBodyBodyAccJerkMag-meanFreq() fBodyBodyGyroMag-mean()
+##  Min.   :-0.1252                Min.   :-0.987         
+##  1st Qu.: 0.0453                1st Qu.:-0.962         
+##  Median : 0.1720                Median :-0.766         
+##  Mean   : 0.1625                Mean   :-0.667         
+##  3rd Qu.: 0.2759                3rd Qu.:-0.409         
+##  Max.   : 0.4881                Max.   : 0.204         
+##  fBodyBodyGyroMag-std() fBodyBodyGyroMag-meanFreq()
+##  Min.   :-0.982         Min.   :-0.4566            
+##  1st Qu.:-0.949         1st Qu.:-0.1695            
+##  Median :-0.773         Median :-0.0535            
+##  Mean   :-0.672         Mean   :-0.0360            
+##  3rd Qu.:-0.428         3rd Qu.: 0.0823            
+##  Max.   : 0.237         Max.   : 0.4095            
+##  fBodyBodyGyroJerkMag-mean() fBodyBodyGyroJerkMag-std()
+##  Min.   :-0.998              Min.   :-0.998            
+##  1st Qu.:-0.981              1st Qu.:-0.980            
+##  Median :-0.878              Median :-0.894            
+##  Mean   :-0.756              Mean   :-0.771            
+##  3rd Qu.:-0.583              3rd Qu.:-0.608            
+##  Max.   : 0.147              Max.   : 0.288            
+##  fBodyBodyGyroJerkMag-meanFreq()
+##  Min.   :-0.1829                
+##  1st Qu.: 0.0542                
+##  Median : 0.1116                
+##  Mean   : 0.1259                
+##  3rd Qu.: 0.2081                
+##  Max.   : 0.4263
+</code></pre>
+
+<h3>Step 6 Output tidy as tidy.txt</h3>
+
+<pre><code class="r">write.table(tidy, &quot;tidy.txt&quot;)
+</code></pre>
+
+</body>
+
+</html>
+
