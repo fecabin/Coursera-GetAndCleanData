@@ -9,7 +9,7 @@
 
     * 1 data soruce :http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
     
-### Step 1 Merge train and test data and measuremen values
+### Step 1 Merge train and test data and feature values
 
 ```{r cache=TRUE}
 ###
