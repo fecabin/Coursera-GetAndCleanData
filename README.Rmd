@@ -1,4 +1,4 @@
-## Course Project
+## Course Project -Getting and Cleaning data
 
 ### Summary 
     In this project , we are asked to make a report , tidy dataset, and codebook presented in github
