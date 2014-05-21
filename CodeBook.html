@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Code Book</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Code Book</h1>
+
+<hr/>
+
+<h2>-1- Variables</h2>
+
+<ul>
+<li>1.1 Identity variable</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Variable name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subject</td>
+<td>The subject who performed the activity for each window sample. Its range is from 1 to 30.</td>
+</tr>
+<tr>
+<td>activity</td>
+<td>Activity name</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>1.2 Measurements</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Measurment names</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tBodyAcc-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAcc-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAcc-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAcc-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAcc-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAcc-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAcc-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerk-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyro-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerk-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccMag-mean()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccMag-std()</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAccMag-mean()</td>
+<td></td>
+</tr>
+<tr>
+<td>tGravityAccMag-std()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerkMag-mean()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyAccJerkMag-std()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroMag-mean()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroMag-std()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerkMag-mean()</td>
+<td></td>
+</tr>
+<tr>
+<td>tBodyGyroJerkMag-std()</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-std()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-meanFreq()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-meanFreq()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAcc-meanFreq()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-mean()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-mean()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-mean()-Z</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-std()-X</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-std()-Y</td>
+<td></td>
+</tr>
+<tr>
+<td>fBodyAccJerk-std()-Z</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<hr/>
+
+<h2>-2- Data</h2>
+
+<ul>
+<li>Description: Contain  average of mean and standard deivation in 81 measuremenst for each 30 subject and  6 activity)</li>
+<li>Info : 180 rows,  81 columns</li>
+</ul>
+
+<hr/>
+
+<h2>-3-  Data Transformation</h2>
+
+<ul>
+<li><p>3.1 Merge train and test data and measuremen values</p></li>
+<li><p>3.2 Replace the activity value with the descriptive activity name</p></li>
+<li><p>3.3 Keep measurement which are respresented for mean and standard deciation </p></li>
+<li><p>3.4 Create an dataframe with identity vaiable &ldquo;subject&rdquo; and &ldquo;activity&rdquo;</p></li>
+<li><p>3.5 Caculate the measurements</p></li>
+<li><p>3.6 Ouput the tidy data set</p></li>
+</ul>
+
+</body>
+
+</html>
+
